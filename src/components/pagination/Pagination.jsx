@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./pagination.module.css";
 
-const Navbar = () => {
+const Pagination = () => {
   return (
     <div className={styles.container}>Pagination</div>
   )
