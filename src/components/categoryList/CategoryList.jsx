@@ -3,20 +3,55 @@ import styles from "./categoryList.module.css";
 import Link from 'next/link';
 import Image from 'next/image';
 
-const CategoryList = () => {
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/categories", {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+
+  return res.json();
+};
+
+const CategoryList = async () => {
+  const data = await getData();
+  let dataKeys = Object.values(data)
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular categories</h1>
       <div className={styles.categories}>
-        <Link href="/blog?cat=style" className={`${styles.category} ${styles.style}`}>
-          <Image 
-            src="/style.png" 
-            alt="" 
-            width={32} 
-            height={32} 
-            className={styles.image}
-          />
-          style
+        {/* attempt to connect categories to a database and display the same thing as the hard coded version below
+        {dataKeys?.map((item) => (
+          <Link 
+            href="/blog?cat=style" 
+            className={`${styles.category} ${styles.slug}`}
+            key={item._id}
+          >
+            {item.img &&<Image 
+              src={item.img} 
+              alt="" 
+              width={32} 
+              height={32} 
+              className={styles.image}
+            />}
+            {items.title}
+          </Link>
+        ))} */}
+        <Link 
+            href="/blog?cat=style" 
+            className={`${styles.category} ${styles.style}`}
+          >
+            <Image 
+              src="/style.png" 
+              alt="" 
+              width={32} 
+              height={32} 
+              className={styles.image}
+            />
+            style
         </Link>
         <Link href="/blog" className={`${styles.category} ${styles.fashion}`}>
           <Image 
