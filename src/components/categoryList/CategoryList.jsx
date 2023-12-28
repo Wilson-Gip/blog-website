@@ -9,15 +9,15 @@ const getData = async () => {
   });
 
   if (!res.ok) {
-    throw new Error("Failed");
+    console.error("Failed");
   }
 
   return res.json();
 };
 
 const CategoryList = async () => {
-  const data = await getData();
-  let dataKeys = Object.values(data)
+  // const data = await getData();
+  // let dataKeys = Object.values(data)
 
   return (
     <div className={styles.container}>
