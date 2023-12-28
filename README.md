@@ -1,3 +1,13 @@
+## Blog Website
+
+-This is a personal blog website where the user can login in to post blogs and write comments with google auth. The posts, users, and categories are handled by the database Mongodb and a tool called Prisma. Quill and Firebase are used to upload and write text in the blogs.
+
+## Technologies
+
+React, Next.js, NextAuth, Google OAuth Client ID, Prisma, Firebase, Mongdb, Router Rest API, Quill
+
+-------------------------------------------------------------------------------------------------
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
