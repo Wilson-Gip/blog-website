@@ -23,20 +23,22 @@ const CategoryList = async () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Popular categories</h1>
       <div className={styles.categories}>
-        {/* attempt to connect categories to a database and display the same thing as the hard coded version below
+        {/* attempt to connect categories to a database using prisma and display the same thing as the hard coded version below
         {dataKeys?.map((item) => (
           <Link 
             href="/blog?cat=style" 
             className={`${styles.category} ${styles.slug}`}
             key={item._id}
           >
-            {item.img &&<Image 
-              src={item.img} 
-              alt="" 
-              width={32} 
-              height={32} 
-              className={styles.image}
-            />}
+            {{item.img && (
+              <Image
+                src={item.img}
+                alt=""
+                width={32}
+                height={32}
+                className={styles.image}
+              />
+            )}
             {items.title}
           </Link>
         ))} */}
